@@ -13,6 +13,8 @@ class MovieServiceTest {
     void shouldSortedInOrderOfGrade () {
 
         //테스트 코드 작성
+
+        //assertEquals(1, 2);
     }
 
 }
