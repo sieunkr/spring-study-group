@@ -2,6 +2,12 @@
 
 
 
+## 강의
+
+- 1주차 : https://brunch.co.kr/@springboot/530
+- 1주차 : https://brunch.co.kr/@springboot/531
+
+
 ## 참석 링크
 
 
