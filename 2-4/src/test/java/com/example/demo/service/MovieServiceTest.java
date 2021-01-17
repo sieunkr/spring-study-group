@@ -24,7 +24,7 @@ class MovieServiceTest {
 
 
     //방법 1 : Mock 클래스를 직접 생성한다...
-    @DisplayName("평점 순으로 정렬되는지 검")
+    @DisplayName("평점 순으로 정렬되는지 검증")
     @Test
     void shouldSortedInOrderOfGrade () {
 
@@ -63,7 +63,7 @@ class MovieServiceTest {
     @Mock
     private MovieRepository movieRepository;
 
-    @DisplayName("평점 순으로 정렬되는지 검")
+    @DisplayName("평점 순으로 정렬되는지 검증")
     @Test
     void shouldSortedInOrderOfGrade_02 () {
 
