@@ -16,7 +16,7 @@
 
 
 - 1/17(일) - https://meet.google.com/qmx-bjro-zje
-- 1/18(월) - 참석 링크는 전일 공유
+- 1/18(월) - https://meet.google.com/tsk-hcew-bhy
 
 
 ## 소스 코드 참고
