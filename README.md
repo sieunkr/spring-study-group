@@ -15,7 +15,7 @@
 스터디 팀원만 입장 가능합니다. 아무나 들어오시면 안됩니다.  
 
 
-- 1/17(일) - https://meet.google.com/qmx-bjro-zje
+- 1/17(일) - 
 - 1/18(월) - https://meet.google.com/tsk-hcew-bhy
 
 
