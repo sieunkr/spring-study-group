@@ -6,11 +6,12 @@
 
 - 1주차(1) : https://brunch.co.kr/@springboot/530
 - 1주차(2) : https://brunch.co.kr/@springboot/531
-- 2주차 : 문서 작성 중
+- 2주차(1) : https://brunch.co.kr/@springboot/532
+- 2주차(2) : https://brunch.co.kr/@springboot/533
+- 2주차(3) : https://brunch.co.kr/@springboot/536
 
-## 스터디 참석 링크
 
-
+## 스터디 참석 링크  
 스터디 팀원만 입장 가능합니다. 아무나 들어오시면 안됩니다.  
 
 
