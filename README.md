@@ -4,12 +4,14 @@
 
 ## 스터디 문서
 
-- 1주차(1) : https://brunch.co.kr/@springboot/530
-- 1주차(2) : https://brunch.co.kr/@springboot/531
-- 2주차(1) : https://brunch.co.kr/@springboot/532
-- 2주차(2) : https://brunch.co.kr/@springboot/533
-- 2주차(3) : https://brunch.co.kr/@springboot/536
+- 1주차(1) 스프링부트 소개 https://brunch.co.kr/@springboot/530)
+- 1주차(2) 간단한 API 서버 만들어보기 : https://brunch.co.kr/@springboot/531
 
+- 2주차(1) Spring IoC, ID : https://brunch.co.kr/@springboot/532
+- 2주차(2) Spring Boot AutoConfiguration : https://brunch.co.kr/@springboot/533
+- 2주차(3) 테스트코드 예시: https://brunch.co.kr/@springboot/536
+
+- 3주차(1) 
 
 ## 스터디 참석 링크  
 스터디 팀원만 입장 가능합니다. 아무나 들어오시면 안됩니다.  
@@ -17,9 +19,14 @@
 
 - 1/17(일) - 참석자: 최@@님, 아@@님, 황@@님, 김@@님
 
-  답변 잘 못한 주제 : @Autowired 사용을 추천하지 않는 이유. 상세하게 설명할 수 있도록 다시 준비.
+#### 답변 재확인
+  - @Autowired 사용을 추천하지 않는 이유
 
-- 1/18(월) - https://meet.google.com/tsk-hcew-bhy
+- 1/18(월) - 참석자: ..
+ 
+#### 답변 재확인
+  - @JsonInclude(include.NON_NULL) 실무 경험 문의
+  - Enum 생성자에 final 매개변수 왜 썼는지? 
 
 
 ## 소스 코드 참고
