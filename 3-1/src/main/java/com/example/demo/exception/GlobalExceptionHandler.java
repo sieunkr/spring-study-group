@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 
 @Slf4j
-//@RestControllerAdvice(basePackages = "com.example.demo.web")
+@RestControllerAdvice(basePackages = "com.example.demo.web")
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = ClientAuthRuntimeException.class)
