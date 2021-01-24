@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 
 @Slf4j
-@RestControllerAdvice(basePackages = "com.example.demo.web")
+//@RestControllerAdvice(basePackages = "com.example.demo.web")
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = ClientAuthRuntimeException.class)
@@ -23,6 +23,7 @@ public class GlobalExceptionHandler {
                 .build();
     }
 
+
     @ExceptionHandler(value = ClientNoContentRuntimeException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     protected CommonResponse handleClientNoContentRuntimeException(Exception e, WebRequest request) {
@@ -31,7 +32,7 @@ public class GlobalExceptionHandler {
 
         return CommonResponse.builder()
                 .message(e.getMessage())
-                .status(HttpStatus.NO_CONTENT.value())
+                .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
                 .build();
     }
 }

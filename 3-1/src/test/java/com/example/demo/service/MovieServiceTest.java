@@ -1,7 +1,9 @@
 package com.example.demo.service;
 
 import com.example.demo.core.Movie;
+import com.example.demo.core.MovieRepository;
 import com.example.demo.exception.ClientNoContentRuntimeException;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -93,8 +95,8 @@ class MovieServiceTest {
     }
      */
 
-    /*
-    @DisplayName("추천할 영화가 없을 때는 디폴트 영화를 제공한다.")
+    @Disabled
+    @DisplayName("추천할 영화가 없을 때는 디폴트 영화를 제공하는지 검증")
     @Test
     void shouldDefaultMovieWhenNoneRecommend() {
 
@@ -109,7 +111,7 @@ class MovieServiceTest {
         //then
         assertEquals(expectedDefaultMovie, actualRecommendMovie.getTitle());
     }
-    */
+
 
     @DisplayName("추천할 영화가 없을 때는 예외를 발생하는지 검증")
     @Test

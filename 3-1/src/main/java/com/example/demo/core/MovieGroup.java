@@ -23,14 +23,30 @@ public class MovieGroup {
                 .collect(Collectors.toList());
     }
 
-    /* Null 처리 어려움...
+    /*
+    //* Null 처리 어려움...
     public Movie getHighestRatingMovie() {
-        return Movie 객체; 데이터가 없을 땐 어떻게 해야할까? Null 을 반환하면 될까?
+        return getListOrderRating().get(0);
+        //데이터가 없을 땐 어떻게 해야할까? Null 을 반환하면 될까?
     }
-    */
+     */
+
+    /*
+    public Movie getHighestRatingMovie() {
+        if(!getListOrderRating().isEmpty()) {
+            return getListOrderRating().get(0);
+        } else {
+            return null;
+        }
+    }
+
+     */
+
 
     public Optional<Movie> getHighestRatingMovie() {
         return getListOrderRating().stream().findFirst();
     }
+
+
 
 }
