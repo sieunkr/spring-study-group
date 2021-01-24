@@ -20,6 +20,7 @@ public class MovieGroup {
         return list.stream()
                 .filter(b -> !((Float) b.getUserRating()).equals(0.0f))
                 .sorted((a, b) -> b.getUserRating() > a.getUserRating() ? 1 : -1)
+                //.skip(1) 말도 안되는 코드..
                 .collect(Collectors.toList());
     }
 

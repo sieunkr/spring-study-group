@@ -76,14 +76,14 @@ class MovieServiceTest {
         assertEquals(expectedRecommendMovie, actualRecommendMovie.getTitle());
     }
 
-    /*
-    @DisplayName("오늘의 추천 영화로 평점이 두번째 높은 영화인지 검증")
+    @Disabled
+    @DisplayName("오늘의 추천 영화로 평점이 두번째 높은 영화를 제공하는 검증")
     @Test
     void shouldRecommendSecondHighestRating() {
 
         //given
         var query = "테스트_쿼리";
-        var expectedRecommendMovie = "영화1";
+        var expectedRecommendMovie = "평점2위";
         given(movieRepository.findByQuery(anyString())).willReturn(getStubMovies());
         MovieService movieService = new MovieService(movieRepository);
 
@@ -93,7 +93,7 @@ class MovieServiceTest {
         //then
         assertEquals(expectedRecommendMovie, actualRecommendMovie.getTitle());
     }
-     */
+
 
     @Disabled
     @DisplayName("추천할 영화가 없을 때는 디폴트 영화를 제공하는지 검증")
