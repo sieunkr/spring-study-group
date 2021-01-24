@@ -20,7 +20,9 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-cache'
+
+    //TODO: 없어도 되는데...확인 필요.. 
+    //implementation 'org.springframework.boot:spring-boot-starter-cache'
 
     //implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'org.apache.httpcomponents:httpclient:4.5'
