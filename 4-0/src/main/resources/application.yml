@@ -1,0 +1,28 @@
+server:
+  port: 8081
+  tomcat:
+    threads:
+      max: 256
+
+
+#spring:
+#  cache:
+#    type: redis
+#    #redis:
+#    #  time-to-live:
+#  redis:
+#    host: localhost
+#    post: 6379
+
+http:
+  client:
+    connectionTimeout: 3000
+    readTimeout: 7000
+    maxConnection: 50
+    maxConnPerRoute: 10
+
+naver:
+  openapi:
+    movieUrl: https://openapi.naver.com/v1/search/movie.json
+
+
