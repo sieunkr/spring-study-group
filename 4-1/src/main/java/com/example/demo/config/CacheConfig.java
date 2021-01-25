@@ -23,20 +23,11 @@ import java.util.Map;
 public class CacheConfig {
 
 
-
     /*
     @Bean
-    public CacheManager redisCacheManager(RedisConnectionFactory connectionFactory) {
-        RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()
-                .entryTtl(Duration.ofSeconds(30))
-                .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
-                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
-
-        return RedisCacheManager.RedisCacheManagerBuilder
-                .fromConnectionFactory(connectionFactory)
-                .cacheDefaults(redisCacheConfiguration)
-                .build();
-    }
+    CacheManager..
+    스프링 부트가 제공하는 기본 CacheManager 를 사용하는 경우에는, 별도로 정의할 필요는 없음.
+    하지만, 실무에서는 대부분 커스텀하게 변경해서 사용함
      */
 
 

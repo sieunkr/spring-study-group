@@ -26,7 +26,6 @@ public class MovieService {
         return movieGroup.getListOrderRating();
     }
 
-    //TODO: 추후 개선 예정
     @Cacheable(value = "cache::movie::recommend")
     public Movie recommendTodayMovie() {
 
