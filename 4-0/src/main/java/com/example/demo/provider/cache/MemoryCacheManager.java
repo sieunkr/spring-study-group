@@ -6,7 +6,7 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
-public class MemoryCacheManager {
+public class MemoryCacheManager implements CustomCacheManager {
 
     private ConcurrentHashMap<String, Object> cacheMap = new ConcurrentHashMap<>();
 

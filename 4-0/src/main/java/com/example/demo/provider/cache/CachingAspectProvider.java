@@ -17,7 +17,7 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public class CachingAspectProvider {
 
-    private final MemoryCacheManager memoryCacheManager;
+    private final CustomCacheManager cacheManager;
 
     //TODO: 클린 코드
     @Around("@annotation(com.example.demo.provider.cache.MemoryCaching) && @annotation(target)")
@@ -37,11 +37,11 @@ public class CachingAspectProvider {
             cacheKey = target.value() + "::" +joinPoint.getArgs()[keyIndex];
         }
 
-        return memoryCacheManager.get(cacheKey)
+        return cacheManager.get(cacheKey)
                 .orElseGet(() -> {
                     try {
                         Object data = joinPoint.proceed();
-                        memoryCacheManager.put(cacheKey, data);
+                        cacheManager.put(cacheKey, data);
                         return data;
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
