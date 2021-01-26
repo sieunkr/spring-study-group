@@ -17,6 +17,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class MovieServiceTest {
@@ -34,6 +35,8 @@ class MovieServiceTest {
         var expectedTopRankingMovieTile = "평점1위";    //평점이 제일 높을 것으로 예상되는 영화의 제목
         given(movieRepository.findByQuery(anyString())).willReturn(getStubMovies());
         MovieService movieService = new MovieService(movieRepository);
+        //when(movieRepository.find)
+
 
         //when
         var actualMovies = movieService.search(query);

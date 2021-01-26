@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.provider.cache.Caching;
+import com.example.demo.provider.cache.MemoryCaching;
 import com.example.demo.core.Movie;
 import com.example.demo.core.MovieGroup;
 import com.example.demo.core.MovieRepository;
@@ -18,14 +18,13 @@ public class MovieService {
 
     private final MovieRepository movieRepository;
 
-    //TODO: key를 어떻게 전달하면 좋을지?
-    @Caching(value = "search-movies")
+    @MemoryCaching(value = "cache::search-movies", key = "query")
     public List<Movie> search(final String query) {
         MovieGroup movieGroup = new MovieGroup(movieRepository.findByQuery(query));
         return movieGroup.getListOrderRating();
     }
 
-    @Caching(value = "recommend-movie")
+    @MemoryCaching(value = "cache::recommend-movie")
     public Movie recommendTodayMovie() {
 
         var query = "반지의 제왕";

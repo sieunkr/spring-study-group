@@ -7,7 +7,8 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface Caching {
+public @interface MemoryCaching {
+    String value();
     String key() default "NONE";
-    String value() default "NONE";
+
 }
