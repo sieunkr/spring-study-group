@@ -1,6 +1,5 @@
 package com.example.demo.provider.cache;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -14,10 +13,13 @@ import java.util.Arrays;
 @Slf4j
 @Aspect
 @Component
-@RequiredArgsConstructor
 public class CachingAspectProvider {
 
     private final CustomCacheManager cacheManager;
+
+    public CachingAspectProvider(CustomCacheManager memoryCacheManager) {
+        this.cacheManager = memoryCacheManager;
+    }
 
     //TODO: 클린 코드
     @Around("@annotation(com.example.demo.provider.cache.MemoryCaching) && @annotation(target)")
