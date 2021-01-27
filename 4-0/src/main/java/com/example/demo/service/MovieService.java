@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.provider.cache.MemoryCaching;
+import com.example.demo.provider.cache.LookAsideCaching;
 import com.example.demo.core.Movie;
 import com.example.demo.core.MovieGroup;
 import com.example.demo.core.MovieRepository;
@@ -18,13 +18,13 @@ public class MovieService {
 
     private final MovieRepository movieRepository;
 
-    @MemoryCaching(value = "cache::search-movies", key = "query")
+    @LookAsideCaching(value = "cache::search-movies", key = "query")
     public List<Movie> search(final String query) {
         MovieGroup movieGroup = new MovieGroup(movieRepository.findByQuery(query));
         return movieGroup.getListOrderRating();
     }
 
-    @MemoryCaching(value = "cache::recommend-movie")
+    @LookAsideCaching(value = "cache::recommend-movie")
     public Movie recommendTodayMovie() {
 
         var query = "반지의 제왕";

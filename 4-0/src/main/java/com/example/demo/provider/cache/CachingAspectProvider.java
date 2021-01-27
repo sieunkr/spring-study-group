@@ -22,8 +22,8 @@ public class CachingAspectProvider {
     }
 
     //TODO: 클린 코드
-    @Around("@annotation(com.example.demo.provider.cache.MemoryCaching) && @annotation(target)")
-    public Object handlerCaching(ProceedingJoinPoint joinPoint, MemoryCaching target) throws Throwable {
+    @Around("@annotation(com.example.demo.provider.cache.LookAsideCaching) && @annotation(target)")
+    public Object handlerCaching(ProceedingJoinPoint joinPoint, LookAsideCaching target) throws Throwable {
 
         if(StringUtils.isEmpty(target.value())) {
             return joinPoint.proceed();

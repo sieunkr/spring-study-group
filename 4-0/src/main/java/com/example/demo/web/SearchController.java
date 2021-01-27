@@ -1,5 +1,6 @@
 package com.example.demo.web;
 
+import com.example.demo.core.Book;
 import com.example.demo.service.BookService;
 import com.example.demo.service.MovieService;
 import com.example.demo.core.Movie;
@@ -20,7 +21,6 @@ public class SearchController {
 
     @GetMapping("/movies")
     public List<Movie> getMoviesByQuery(@RequestParam(name = "q") String query) {
-
         return movieService.search(query);
     }
 
@@ -31,7 +31,7 @@ public class SearchController {
     }
 
     @GetMapping("/books")
-    public List<String> getBooksByQuery(@RequestParam(name = "a") String author) {
+    public List<Book> getBooksByQuery(@RequestParam(name = "a") String author) {
 
         return bookService.findAllByAuthor(author);
     }

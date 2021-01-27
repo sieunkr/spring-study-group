@@ -1,4 +1,5 @@
-package com.example.demo.provider.cache;
+package com.example.demo.provider.timer;
+
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,8 +8,5 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface MemoryCaching {
-    String value();
-    String key() default "NONE";
-
+public @interface LogTimer {
 }
