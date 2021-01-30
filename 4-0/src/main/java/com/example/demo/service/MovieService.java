@@ -7,6 +7,7 @@ import com.example.demo.core.MovieRepository;
 import com.example.demo.exception.ClientNoContentRuntimeException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class MovieService {
     @LookAsideCaching(value = "cache::recommend-movie")
     public Movie recommendTodayMovie() {
 
-        var query = "반지의 제왕";
+        var query = "반지의 제왕"; //스터디를 위한 하드코딩.. 추후 개선 예정
         MovieGroup movieGroup = new MovieGroup(movieRepository.findByQuery(query));
         return movieGroup.getHighestRatingMovie()
                 .orElseThrow(ClientNoContentRuntimeException::new);

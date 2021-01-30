@@ -1,7 +1,8 @@
 package com.example.demo.service;
 
 import com.example.demo.core.Book;
-import com.example.demo.provider.timer.LogTimer;
+import com.example.demo.provider.cache.LookAsideCaching;
+import com.example.demo.provider.timer.PerformanceTimeRecord;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +13,8 @@ import java.util.List;
 @Service
 public class BookService {
 
-    //@MemoryCaching(value = "cache::book::author", key = "author")
-    @LogTimer
+    @PerformanceTimeRecord
+    @LookAsideCaching(value = "cache::book::author", key = "author")
     public List<Book> findAllByAuthor(final String author) {
 
         try {

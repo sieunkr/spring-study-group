@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Aspect
 @Component
-public class TimerAspectProvider {
+public class RecodeAspectProvider {
 
-    @Around("@annotation(LogTimer)")
+    @Around("@annotation(com.example.demo.provider.timer.PerformanceTimeRecord)")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
 
         long start = System.currentTimeMillis();
