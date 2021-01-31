@@ -20,7 +20,7 @@ public class CacheController {
         return "ok";
     }
 
-    @CacheEvict(value = "cache::movie::query")
+    @CacheEvict(value = "cache::movie::query", key = "#query")
     @DeleteMapping("/movie-query")
     public Boolean clearMovieQueryCache(@RequestParam(name = "query") String query) {
         return true;
