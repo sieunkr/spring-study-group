@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 
-@Component("redisCacheManager")
+@Component("redisCustomCacheManager")
 public class RedisCustomCacheManager implements CustomCacheManager {
 
 
