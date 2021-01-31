@@ -20,7 +20,7 @@ public class MovieService {
 
     private final MovieRepository movieRepository;
 
-    @Cacheable(value = "cache::movie::query")
+    @Cacheable(value = "cache::movie::query", key = "#query")
     public List<Movie> search(final String query) {
         MovieGroup movieGroup = new MovieGroup(movieRepository.findByQuery(query));
         return movieGroup.getListOrderRating();

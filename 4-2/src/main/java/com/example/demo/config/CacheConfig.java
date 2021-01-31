@@ -32,6 +32,7 @@ public class CacheConfig {
     @Autowired
     RedisConnectionFactory redisConnectionFactory;
 
+
     @Bean
     public CacheManager cacheManager() {
         RedisCacheManager.RedisCacheManagerBuilder builder =
@@ -39,7 +40,7 @@ public class CacheConfig {
 
         RedisCacheConfiguration configuration = RedisCacheConfiguration.defaultCacheConfig()
                 .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()))
-                .entryTtl(Duration.ofMillis(5L));
+                .entryTtl(Duration.ofMinutes(5L));
 
         builder.cacheDefaults(configuration);
         return builder.build();
