@@ -24,7 +24,8 @@
 - 참석자: 미정
 
 ## 1/31(일) - 참석 링크는 당일 공유
-- 참석자: https://meet.google.com/ohb-tsyv-ihi
+- 참석자: 김관@님, 전기@님, yj@님, 송진@님, 최원@님, 황영@님
+ https://meet.google.com/ohb-tsyv-ihi
 
 
   
