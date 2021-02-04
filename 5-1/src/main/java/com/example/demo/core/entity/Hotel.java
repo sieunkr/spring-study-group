@@ -31,6 +31,7 @@ public class Hotel {
     private String name;
 
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.PERSIST)
+    //@OneToMany
     private List<Room> roomList = new ArrayList<>();
 
     public String getFullName() {

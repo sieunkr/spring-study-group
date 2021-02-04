@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 @Slf4j
@@ -21,12 +22,17 @@ public class HotelService {
     private final HotelRepository hotelRepository;
     private final RoomRepository roomRepository;
 
+    //영속성 전이 관련 샘플...TODO:적합한 사례인지...??
     public void test() {
 
-        //영속성 전이 관련 샘플...TODO:적합한 사례인지...??
+
         RoomType roomType = roomRepository.getRoomTypeById(1L).orElseThrow();
 
-        Hotel hotel = Hotel.builder().city("dokyo").name("test01").build();
+        Hotel hotel = Hotel.builder()
+                .city("new-york")
+                .name("test01")
+                .roomList(new ArrayList<>())
+                .build();
 
         Room room = Room.builder()
                 .roomStatus(RoomStatus.ON)
@@ -35,7 +41,9 @@ public class HotelService {
                 .hotel(hotel)
                 .build();
 
-        roomRepository.save(room);
+        hotel.getRoomList().add(room);
+
+        hotelRepository.save(hotel);
 
     }
 }
