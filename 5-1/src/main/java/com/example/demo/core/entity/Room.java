@@ -1,18 +1,18 @@
 package com.example.demo.core.entity;
 
 import com.example.demo.core.entity.enums.RoomStatus;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "ROOM")
-@Getter
+@Data
 @Builder
 @EqualsAndHashCode(callSuper = false)
+@NoArgsConstructor
+@AllArgsConstructor
 public class Room {
 
     @Id
@@ -20,6 +20,7 @@ public class Room {
     private Long id;
 
     @NotNull
+    //@ManyToOne(cascade = CascadeType.PERSIST)
     @ManyToOne
     @JoinColumn(name = "hotel_id", referencedColumnName = "id")
     private Hotel hotel;

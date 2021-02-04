@@ -1,8 +1,6 @@
 package com.example.demo.core.entity;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -10,9 +8,11 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "HOTEL")
-@Getter
+@Data
 @Builder
 @EqualsAndHashCode(callSuper = false)
+@NoArgsConstructor
+@AllArgsConstructor
 public class Hotel {
 
     @Id

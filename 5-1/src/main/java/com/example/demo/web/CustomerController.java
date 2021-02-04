@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1/api/customers")
+@RequestMapping("/api/v1/customers")
 @RequiredArgsConstructor
 public class CustomerController {
 
@@ -17,6 +17,8 @@ public class CustomerController {
     public CustomerDTO getOne(@PathVariable(name = "id") long id) {
         return customerService.findById(id);
     }
+
+
 
     @PostMapping()
     public CustomerDTO addCustomer() {
