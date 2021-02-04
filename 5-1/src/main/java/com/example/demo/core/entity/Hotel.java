@@ -5,6 +5,8 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "HOTEL")
@@ -27,6 +29,9 @@ public class Hotel {
     @NotNull
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.PERSIST)
+    private List<Room> roomList = new ArrayList<>();
 
     public String getFullName() {
         return this.city + " " + this.name;

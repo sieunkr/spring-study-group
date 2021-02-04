@@ -20,4 +20,10 @@ public class RoomController {
         return roomService.findById(id);
     }
 
+    @PostMapping
+    public String test() {
+        roomService.test();
+        return "d";
+    }
+
 }

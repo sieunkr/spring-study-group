@@ -8,10 +8,10 @@ VALUES
   (1, 'A'),
   (2, 'S');
 
-INSERT INTO ROOM (id, hotel_id, room_status, room_type_id)
+INSERT INTO ROOM (id, name, hotel_id, room_status, room_type_id)
 VALUES
-  (1, 1, 'ON', 1),
-  (2, 1, 'ON', 2);
+  (1, 'room01', 1, 'ON', 1),
+  (2, 'room02', 1, 'ON', 2);
 
 INSERT INTO CUSTOMER (id, first_name, last_name, phone, email, status)
 VALUES

@@ -29,7 +29,7 @@ public class RoomService {
         roomRepository.save(room);
     }
 
-    
+
     public void test() {
         /* 테스트 코드..
         Hotel hotel = Hotel.builder().city("dokyo").name("test01").build();

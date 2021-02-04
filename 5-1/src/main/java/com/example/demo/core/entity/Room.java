@@ -20,8 +20,11 @@ public class Room {
     private Long id;
 
     @NotNull
-    //@ManyToOne(cascade = CascadeType.PERSIST)
-    @ManyToOne
+    private String name;
+
+    //@NotNull
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    //@ManyToOne
     @JoinColumn(name = "hotel_id", referencedColumnName = "id")
     private Hotel hotel;
 
