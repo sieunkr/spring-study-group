@@ -2,6 +2,7 @@ package com.example.demo.web;
 
 import com.example.demo.core.dto.CustomerDTO;
 import com.example.demo.core.entity.Customer;
+import com.example.demo.core.entity.enums.CustomerStatus;
 import com.example.demo.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.util.StringUtils;
@@ -31,11 +32,10 @@ public class CustomerController {
         return customerService.findById(id);
     }
 
-
-
-
-
-
+    @PutMapping
+    public CustomerDTO test() {
+        return customerService.updateStatus(1L, CustomerStatus.INACTIVE);
+    }
 
     @PostMapping()
     public CustomerDTO addCustomer() {

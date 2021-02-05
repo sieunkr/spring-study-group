@@ -17,6 +17,7 @@ public class CustomerDTO {
     private String lastName;
     private String phone;
     private String email;
+    private String status;
 
     public static CustomerDTO of(Customer customer) {
         return CustomerDTO.builder()
@@ -25,6 +26,7 @@ public class CustomerDTO {
                 .lastName(customer.getLastName())
                 .email(customer.getEmail())
                 .phone(customer.getPhone())
+                .status(customer.getStatus().name())
                 .build();
     }
 

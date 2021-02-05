@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.core.dto.CustomerDTO;
 import com.example.demo.core.entity.Customer;
+import com.example.demo.core.entity.enums.CustomerStatus;
 import com.example.demo.core.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -40,5 +41,12 @@ public class CustomerService {
 
     public void save(Customer customer) {
         customerRepository.save(customer);
+    }
+
+    @Transactional
+    public CustomerDTO updateStatus(long customerId, CustomerStatus status) {
+        Customer customer = customerRepository.findById(customerId).orElseThrow();
+        customer.setStatus(status);
+        return CustomerDTO.of(customer);
     }
 }
