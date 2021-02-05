@@ -1,5 +1,7 @@
 package com.example.demo.core.entity;
 
+import com.example.demo.core.entity.constant.ColumnLength;
+import com.example.demo.core.entity.enums.CustomerStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
@@ -19,10 +21,10 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "first_name")
+    @Column(name = "first_name", length = ColumnLength.VARCHAR_NAME)
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name = "last_name", length = ColumnLength.VARCHAR_NAME)
     private String lastName;
 
     @NotNull
@@ -34,7 +36,8 @@ public class Customer {
     private String email;
 
     @Column(name = "status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private CustomerStatus status;
 
     @Transient
     @JsonIgnore

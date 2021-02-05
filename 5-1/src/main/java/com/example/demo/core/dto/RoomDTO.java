@@ -10,7 +10,7 @@ public class RoomDTO {
 
     private long id;
     private long hotelId;
-    private long roomTypeId;
+    private String roomType;
     private String roomStatus;
 
     public static RoomDTO of(Room room) {
@@ -18,7 +18,7 @@ public class RoomDTO {
         return RoomDTO.builder()
                 .id(room.getId())
                 .hotelId(room.getHotel().getId())
-                .roomTypeId(room.getRoomType().getId())
+                .roomType(room.getRoomType().getName())
                 .roomStatus(room.getRoomStatus().getName())
                 .build();
     }

@@ -1,13 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.core.dto.CustomerDTO;
 import com.example.demo.core.dto.RoomDTO;
-import com.example.demo.core.entity.Customer;
-import com.example.demo.core.entity.Hotel;
 import com.example.demo.core.entity.Room;
-import com.example.demo.core.entity.RoomType;
-import com.example.demo.core.entity.enums.RoomStatus;
-import com.example.demo.core.repository.CustomerRepository;
 import com.example.demo.core.repository.RoomRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

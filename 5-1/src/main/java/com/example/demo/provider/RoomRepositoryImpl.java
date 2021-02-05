@@ -1,8 +1,6 @@
 package com.example.demo.provider;
 
-import com.example.demo.core.entity.Customer;
 import com.example.demo.core.entity.Room;
-import com.example.demo.core.entity.RoomType;
 import com.example.demo.core.repository.RoomRepository;
 import org.springframework.stereotype.Repository;
 
@@ -35,10 +33,4 @@ public class RoomRepositoryImpl implements RoomRepository {
         entityManager.persist(room);
     }
 
-
-
-    public Optional<RoomType> getRoomTypeById(long id) {
-        RoomType type = entityManager.find(RoomType.class, id);
-        return Optional.ofNullable(type);
-    }
 }

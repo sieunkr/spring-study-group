@@ -1,6 +1,8 @@
 package com.example.demo.core.entity;
 
+import com.example.demo.core.entity.constant.ColumnLength;
 import com.example.demo.core.entity.enums.RoomStatus;
+import com.example.demo.core.entity.enums.RoomType;
 import lombok.*;
 
 import javax.persistence.*;
@@ -20,6 +22,7 @@ public class Room {
     private Long id;
 
     @NotNull
+    @Column(name = "name", length = ColumnLength.VARCHAR_NAME)
     private String name;
 
     //@NotNull
@@ -33,8 +36,8 @@ public class Room {
     private RoomStatus roomStatus;
 
     @NotNull
-    @ManyToOne
-    @JoinColumn(name = "room_type_id", referencedColumnName = "id")
+    @Enumerated(EnumType.STRING)
+    @JoinColumn(name = "room_type")
     private RoomType roomType;
 
 }

@@ -1,5 +1,6 @@
 package com.example.demo.core.entity;
 
+import com.example.demo.core.entity.constant.ColumnLength;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,12 +23,11 @@ public class Hotel {
     private Long id;
 
     @NotNull
-    @Size(min = 1, max = 15, message = "")
-    @Column(name = "city")
+    @Column(name = "city", length = ColumnLength.VARCHAR_NAME)
     private String city;
 
     @NotNull
-    @Column(name = "name")
+    @Column(name = "name", length = ColumnLength.VARCHAR_NAME)
     private String name;
 
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.PERSIST)

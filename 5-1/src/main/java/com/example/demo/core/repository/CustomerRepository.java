@@ -9,5 +9,6 @@ public interface CustomerRepository {
 
     List<Customer> findAll();
     Optional<Customer> findById(long id);
+    List<Customer> findByLastName(String name);
     void save(Customer customer);
 }
