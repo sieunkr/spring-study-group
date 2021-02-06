@@ -4,12 +4,16 @@ import lombok.Getter;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import java.io.Serializable;
 
 @Getter
 @Embeddable
-public class RoomId {
+public class RoomId implements Serializable {
 
-    @Column(name="room_id")
+    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private RoomId() {

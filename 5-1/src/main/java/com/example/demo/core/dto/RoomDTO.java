@@ -16,7 +16,7 @@ public class RoomDTO {
     public static RoomDTO of(Room room) {
 
         return RoomDTO.builder()
-                .id(room.getId())
+                .id(room.getRoomId().getId())
                 .hotelId(room.getHotel().getId())
                 .roomType(room.getRoomType().getName())
                 .roomStatus(room.getRoomStatus().getName())

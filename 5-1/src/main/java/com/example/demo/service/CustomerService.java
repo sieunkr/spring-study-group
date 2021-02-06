@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.core.dto.CustomerDTO;
 import com.example.demo.core.entity.Customer;
+import com.example.demo.core.entity.CustomerId;
 import com.example.demo.core.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +23,7 @@ public class CustomerService {
 
     private final CustomerRepository customerRepository;
 
-    public CustomerDTO findById(long id) {
+    public CustomerDTO findById(CustomerId id) {
         return customerRepository.findById(id).map(CustomerDTO::of)
                 .orElseThrow();
     }

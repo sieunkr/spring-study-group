@@ -10,7 +10,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "HOTEL")
-@Data
+@Getter
 @Builder
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor

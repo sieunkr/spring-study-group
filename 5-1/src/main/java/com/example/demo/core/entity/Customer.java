@@ -8,7 +8,7 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Data
+@Getter
 @Builder
 @Entity
 @Table(name = "CUSTOMER")
@@ -17,9 +17,8 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class Customer {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @EmbeddedId
+    private CustomerId customerId;
 
     @Column(name = "first_name", length = ColumnLength.VARCHAR_NAME)
     private String firstName;
@@ -44,4 +43,5 @@ public class Customer {
     public String getFullName() {
         return this.firstName + " " + this.lastName;
     }
+
 }

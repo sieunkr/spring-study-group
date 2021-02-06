@@ -1,19 +1,22 @@
 package com.example.demo.core.entity;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import com.example.demo.core.entity.enums.ReservationStatus;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 @Table(name = "RESERVATION")
+//@Data
 @Getter
 @Builder
 @EqualsAndHashCode(callSuper = false)
+@NoArgsConstructor
+@AllArgsConstructor
 public class Reservation {
 
     @Id
@@ -46,6 +49,18 @@ public class Reservation {
     @Column(name = "check_out_date")
     private LocalDate checkOutDate;
 
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    private ReservationStatus status;
 
+
+    public void cancelReservation() {
+        this.status = ReservationStatus.CANCELED;
+    }
+
+    public long getTotalNumberOfPeople() {
+        //TODO: not null 체크..
+        return adults + children;
+    }
 
 }

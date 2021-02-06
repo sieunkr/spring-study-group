@@ -21,6 +21,10 @@ VALUES
   (3, 'tester', 'kim', '010-2222-2222', 'tester@gmail.com', 'NORMAL');
 
 
-INSERT INTO RESERVATION (id, room_id, adults, children, check_in_date, check_out_date, customer_id)
+INSERT INTO RESERVATION (id, room_id, adults, children, check_in_date, check_out_date, customer_id, status)
 VALUES
-  (1, 1, 2, 0, '2020-06-17', '2020-06-20', 1);
+  (1, 1, 2, 0, '2020-06-17', '2020-06-20', 1, 'PAYMENT_WAITING');
+
+INSERT INTO RESERVATION (id, room_id, adults, children, check_in_date, check_out_date, customer_id, status)
+VALUES
+  (2, 2, 2, 1, '2020-06-18', '2020-06-20', 2, 'PAYMENT_COMPLETED');

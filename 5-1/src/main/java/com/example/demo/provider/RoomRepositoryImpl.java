@@ -1,6 +1,7 @@
 package com.example.demo.provider;
 
 import com.example.demo.core.entity.Room;
+import com.example.demo.core.entity.RoomId;
 import com.example.demo.core.repository.RoomRepository;
 import org.springframework.stereotype.Repository;
 
@@ -22,8 +23,8 @@ public class RoomRepositoryImpl implements RoomRepository {
     }
 
     @Override
-    public Optional<Room> findById(long id) {
-        Room room = entityManager.find(Room.class, id);
+    public Optional<Room> findById(RoomId roomId) {
+        Room room = entityManager.find(Room.class, roomId);
         return Optional.ofNullable(room);
     }
 

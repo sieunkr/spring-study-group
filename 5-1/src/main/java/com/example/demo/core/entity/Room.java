@@ -10,16 +10,15 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "ROOM")
-@Data
+@Getter
 @Builder
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor
 public class Room {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @EmbeddedId
+    private RoomId roomId;
 
     @NotNull
     @Column(name = "name", length = ColumnLength.VARCHAR_NAME)
@@ -39,5 +38,6 @@ public class Room {
     @Enumerated(EnumType.STRING)
     @JoinColumn(name = "room_type")
     private RoomType roomType;
+
 
 }

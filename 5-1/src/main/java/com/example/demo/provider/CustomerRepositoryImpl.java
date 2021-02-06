@@ -2,6 +2,7 @@ package com.example.demo.provider;
 
 import com.example.demo.core.dto.CustomerDTO;
 import com.example.demo.core.entity.Customer;
+import com.example.demo.core.entity.CustomerId;
 import com.example.demo.core.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -42,8 +43,8 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     }
 
     @Override
-    public Optional<Customer> findById(long id) {
-        Customer customer = entityManager.find(Customer.class, id);
+    public Optional<Customer> findById(CustomerId customerId) {
+        Customer customer = entityManager.find(Customer.class, customerId);
         return Optional.ofNullable(customer);
     }
 

@@ -20,7 +20,7 @@ public class CustomerDTO {
 
     public static CustomerDTO of(Customer customer) {
         return CustomerDTO.builder()
-                .id(customer.getId())
+                .id(customer.getCustomerId().getId())
                 .firstName(customer.getFirstName())
                 .lastName(customer.getLastName())
                 .email(customer.getEmail())

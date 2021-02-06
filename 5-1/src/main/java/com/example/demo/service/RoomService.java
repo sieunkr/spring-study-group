@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.core.dto.RoomDTO;
 import com.example.demo.core.entity.Room;
+import com.example.demo.core.entity.RoomId;
 import com.example.demo.core.repository.RoomRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,8 +15,8 @@ public class RoomService {
 
     private final RoomRepository roomRepository;
 
-    public RoomDTO findById(long id) {
-        return roomRepository.findById(id).map(RoomDTO::of)
+    public RoomDTO findById(RoomId roomId) {
+        return roomRepository.findById(roomId).map(RoomDTO::of)
                 .orElseThrow();
     }
 

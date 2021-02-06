@@ -2,6 +2,7 @@ package com.example.demo.web;
 
 import com.example.demo.core.dto.CustomerDTO;
 import com.example.demo.core.entity.Customer;
+import com.example.demo.core.entity.CustomerId;
 import com.example.demo.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.util.StringUtils;
@@ -28,7 +29,7 @@ public class CustomerController {
 
     @GetMapping("/{id}")
     public CustomerDTO getOne(@PathVariable(name = "id") long id) {
-        return customerService.findById(id);
+        return customerService.findById(new CustomerId(id));
     }
 
 
