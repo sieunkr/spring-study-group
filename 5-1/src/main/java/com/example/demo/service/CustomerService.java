@@ -7,10 +7,10 @@ import com.example.demo.core.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -38,6 +38,15 @@ public class CustomerService {
                 .collect(Collectors.toList());
     }
 
+    @Transactional
+    public CustomerDTO updateCustomerEmail(final CustomerId customerId, final String newEmail) {
+        return customerRepository.findById(customerId)
+                .map(customer -> {
+                    customer.changeEmail(newEmail);
+                    return CustomerDTO.of(customer);
+                })
+                .orElseThrow();
+    }
 
     public void save(Customer customer) {
         customerRepository.save(customer);
