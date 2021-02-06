@@ -32,8 +32,4 @@ public class Hotel {
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.PERSIST)
     //@OneToMany
     private List<Room> roomList = new ArrayList<>();
-
-    public String getFullName() {
-        return this.city + " " + this.name;
-    }
 }

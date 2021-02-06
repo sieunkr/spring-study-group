@@ -27,4 +27,8 @@ VALUES
 
 INSERT INTO RESERVATION (id, room_id, adults, children, check_in_date, check_out_date, customer_id, status)
 VALUES
-  (2, 2, 2, 1, '2020-06-18', '2020-06-20', 2, 'PAYMENT_COMPLETED');
+  (2, 1, 1, 0, '2020-06-23', '2020-06-24', 1, 'PAYMENT_COMPLETED');
+
+INSERT INTO RESERVATION (id, room_id, adults, children, check_in_date, check_out_date, customer_id, status)
+VALUES
+  (3, 2, 2, 2, '2020-06-18', '2020-06-20', 2, 'PAYMENT_COMPLETED');

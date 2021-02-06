@@ -18,12 +18,14 @@ public class ReservationDTO {
 
     private long id;
     private String hotel;
+    private long roomId;
     private String roomType;
-    private long adults;
-    private long children;
-    private long total;
+    private int adults;
+    private int children;
+    private int total;
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
+    private Long customerId;
     private String fullName;
     private String phone;
     private String email;
@@ -35,12 +37,14 @@ public class ReservationDTO {
         return ReservationDTO.builder()
                 .id(reservation.getId())
                 .hotel(room.getHotel().getName())
+                .roomId(room.getRoomId().getId())
                 .roomType(room.getRoomType().name())
                 .adults(reservation.getAdults())
                 .children(reservation.getChildren())
                 .total(reservation.getTotalNumberOfPeople())
                 .checkInDate(reservation.getCheckInDate())
                 .checkOutDate(reservation.getCheckOutDate())
+                .customerId(customer.getCustomerId().getId())
                 .fullName(customer.getFullName())
                 .phone(customer.getPhone())
                 .email(customer.getEmail())

@@ -34,10 +34,10 @@ public class Reservation {
     private CustomerId customerId;
 
     @Column(name = "adults")
-    private Long adults;
+    private Integer adults;
 
     @Column(name = "children")
-    private Long children;
+    private Integer children;
 
     @Column(name = "reservation_time")
     @CreatedDate    //TODO: 적합하지 않음
@@ -58,7 +58,7 @@ public class Reservation {
         this.status = ReservationStatus.CANCELED;
     }
 
-    public long getTotalNumberOfPeople() {
+    public int getTotalNumberOfPeople() {
         //TODO: not null 체크..
         return adults + children;
     }

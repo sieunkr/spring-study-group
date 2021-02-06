@@ -27,4 +27,15 @@ public class ReservationController {
         //TODO: 응답 포맷 확인..
         return "ok";
     }
+
+    /*
+    @PostMapping
+    public String newReservation() {
+
+        //TODO: 요청 데이터 확인해야 함..
+        reservationService.makeReservation(null);
+        return "ll";
+    }
+
+     */
 }

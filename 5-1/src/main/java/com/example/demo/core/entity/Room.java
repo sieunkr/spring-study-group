@@ -40,4 +40,8 @@ public class Room {
     private RoomType roomType;
 
 
+    //TODO: 네이밍...
+    public boolean verifyPeopleCount(final int adult, final int children) {
+        return this.roomType.getMaxPeople() >= adult + children;
+    }
 }

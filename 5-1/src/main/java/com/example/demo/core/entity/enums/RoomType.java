@@ -7,13 +7,15 @@ import lombok.Getter;
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum RoomType {
 
-    STANDARD("스탠다드"),
-    DELUXE("디럭스");
+    STANDARD("스탠다드", 3),
+    DELUXE("디럭스", 5);
 
     private String description;
+    private Integer maxPeople;
 
-    RoomType(String description) {
+    RoomType(String description, Integer maxPeople) {
         this.description = description;
+        this.maxPeople = maxPeople;
     }
 
     public String getName() {

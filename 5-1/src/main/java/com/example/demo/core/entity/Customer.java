@@ -44,4 +44,16 @@ public class Customer {
         return this.firstName + " " + this.lastName;
     }
 
+    public void dormant() {
+        this.status = CustomerStatus.INACTIVE;
+    }
+
+    public void changeEmail(String toBeEmail) {
+        this.email = toBeEmail;
+    }
+
+    public boolean isPossibleReservation() {
+        return CustomerStatus.NORMAL.equals(this.status);
+    }
+
 }
