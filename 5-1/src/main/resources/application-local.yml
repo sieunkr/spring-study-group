@@ -1,0 +1,24 @@
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: create
+      use-new-id-generator-mappings: true
+    properties:
+      hibernate:
+        session:
+          events:
+            log:
+              LOG_QUERIES_SLOWER_THAN_MS: 3000
+      javax:
+        persistence:
+          query:
+            timeout: 5000
+  datasource:
+    url: jdbc:mysql://localhost:3306/hotel?autoReconnect=false&characterEncoding=UTF-8&useUnicode=true&characterEncoding=UTF-8&connectTimeout=5000&socketTimeout=6000&useSSL=false&serverTimezone=Asia/Seoul&rewriteBatchedStatements=true
+    username: root
+    password:
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 50
+#      connection-test-query: SELECT 1
