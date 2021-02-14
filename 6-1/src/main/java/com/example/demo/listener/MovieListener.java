@@ -17,6 +17,5 @@ public class MovieListener {
         log.info("listener message : {}", message);
 
         //TODO: 비즈니스 로직
-
     }
 }
