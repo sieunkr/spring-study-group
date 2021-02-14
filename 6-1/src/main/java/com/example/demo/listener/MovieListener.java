@@ -3,7 +3,6 @@ package com.example.demo.listener;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
@@ -13,10 +12,11 @@ import org.springframework.stereotype.Component;
 public class MovieListener {
 
     @RabbitListener(queues = "search.queue")
-    public void receiveMessage(final Message message) {
+    public void receiveMessage(final CustomMessageDTO message) {
 
         log.info("listener message : {}", message);
 
-        //TODO: 비즈니스 로직 확인
+        //TODO: 비즈니스 로직
+
     }
 }
